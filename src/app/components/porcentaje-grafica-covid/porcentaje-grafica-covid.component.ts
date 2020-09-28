@@ -31,12 +31,12 @@ export class PorcentajeGraficaCovidComponent implements OnInit {
       this.covidService.getCovidTotal().subscribe( resp => {
         console.log('A ', resp);
 
-        let data = resp.map((item) => {
+        /* let data = resp.map((item) => {
           console.log('B ', item);
 
           return item;
         });
-        console.log('C ',data);
+        console.log('C ',data); */
 
         //this.covidData = data;
       });
