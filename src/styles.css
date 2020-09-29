@@ -10,3 +10,7 @@ hr {
   display: grid;
   height: 300px;
 }
+
+.letras {
+  color: grey;
+}

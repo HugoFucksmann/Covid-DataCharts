@@ -1,0 +1,17 @@
+<div class="chart-conteiner">
+  <ngx-charts-pie-chart
+
+    [scheme]="colorScheme"
+    [results]="covidData"
+    [gradient]="gradient"
+    [legend]="showLegend"
+    [legendPosition]="legendPosition"
+    [labels]="showLabels"
+    [doughnut]="isDoughnut"
+    [explodeSlices]="false"
+    (select)="onSelect($event)"
+    (activate)="onActivate($event)"
+    (deactivate)="onDeactivate($event)"
+    style="fill: grey">
+  </ngx-charts-pie-chart>
+</div>

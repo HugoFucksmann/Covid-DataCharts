@@ -8,6 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GraficaBarraCovidComponent } from './grafica-barra-covid/grafica-barra-covid.component';
 import { PorcentajeGraficaCovidComponent } from './porcentaje-grafica-covid/porcentaje-grafica-covid.component';
+import { Porcentaje2CovidComponent } from './porcentaje2-covid/porcentaje2-covid.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +16,14 @@ import { PorcentajeGraficaCovidComponent } from './porcentaje-grafica-covid/porc
     GraficaBarraComponent,
     GraficaBarraCovidComponent,
     PorcentajeGraficaCovidComponent,
+    Porcentaje2CovidComponent,
   ],
   exports: [
     NavbarComponent,
     GraficaBarraComponent,
     GraficaBarraCovidComponent,
     PorcentajeGraficaCovidComponent,
+    Porcentaje2CovidComponent,
   ],
   imports: [
     CommonModule,

@@ -1,5 +1,5 @@
 
-export interface Covid {
+export class Covid {
   Cases: number;
   City: string;
   CityCode: string;
@@ -12,17 +12,28 @@ export interface Covid {
   Status: string;
 }
 
-export interface CovidTotal {
+/* export class CovidTotal {
   Message: string;
-  Global: {
+  Global: number[];
+  Countries: any[];
+  Date: string;
+}
+ */
+export class DataGraficaCovid{
+  name: string;
+  value: number;
+}
+
+/*
+{Global
     NewConfirmed?: Number;
     TotalConfirmed?: Number;
     NewDeaths?: Number;
     TotalDeaths?: Number;
     NewRecovered?: Number;
     TotalRecovered?: Number;
-  },
-  Countries: {
+  }
+  {Countries
     Country?: string;
     CountryCode?: string;
     Slug?: string;
@@ -34,11 +45,40 @@ export interface CovidTotal {
     TotalRecovered?: number;
     Date?: string;
     Premium?: {};
-  };
-  Date: string;
+  }
+*/
+
+
+export interface Global {
+  NewConfirmed: number;
+  TotalConfirmed: number;
+  NewDeaths: number;
+  TotalDeaths: number;
+  NewRecovered: number;
+  TotalRecovered: number;
 }
 
-export interface DataGraficaCovid{
-  name: string;
-  value: number;
+export interface Premium {}
+
+export interface Country {
+  Country: string;
+  CountryCode: string;
+  Slug: string;
+  NewConfirmed: number;
+  TotalConfirmed: number;
+  NewDeaths: number;
+  TotalDeaths: number;
+  NewRecovered: number;
+  TotalRecovered: number;
+  Date: Date;
+  Premium: Premium;
 }
+
+export class Total {
+  Message: string;
+  Global: Global;
+  Countries: Country[];
+  Date: Date;
+}
+
+

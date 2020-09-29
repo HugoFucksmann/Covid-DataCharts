@@ -29,8 +29,9 @@ export class GraficaBarraCovidComponent implements OnInit {
 
   ngOnInit(): void {
     this.covidService.getCovidArg().subscribe((resp) => {
+
       let data = resp.map((item) => {
-        return { name: item.Date.slice(2, -10), value: item.Cases };
+        return { name: item.Date.slice(2, -10), value: item['Cases'] };
       });
       this.covidData = data;
     });
