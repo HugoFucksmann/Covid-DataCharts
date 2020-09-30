@@ -1,5 +1,5 @@
 {
-  "name": "goty",
+  "name": "CovidCharts",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -20,7 +20,6 @@
     "@angular/platform-browser": "~10.0.2",
     "@angular/platform-browser-dynamic": "~10.0.2",
     "@angular/router": "~10.0.2",
-    "@aposin/ng-aquila": "^10.1.0",
     "@swimlane/ngx-charts": "^16.0.0",
     "css-vars-ponyfill": "^2.1.2",
     "iban": "^0.0.12",

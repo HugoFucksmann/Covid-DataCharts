@@ -15,5 +15,3 @@ hr {
   color: grey;
 }
 
-@import "@angular/cdk/overlay-prebuilt.css";
-@import "@angular/cdk/a11y-prebuilt.css";
