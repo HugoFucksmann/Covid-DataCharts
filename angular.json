@@ -24,9 +24,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/@aposin/ng-aquila/css/normalize.css",
+              "node_modules/@aposin/ng-aquila/themes/aposin.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/what-input/dist/what-input.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -119,6 +123,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "goty"
 }
