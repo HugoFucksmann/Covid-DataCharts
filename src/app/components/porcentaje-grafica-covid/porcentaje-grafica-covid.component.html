@@ -1,9 +1,13 @@
-<div class="chart-conteiner">
+<div class="d-flex justify-content-center">
+  <div *ngIf="!cargando" class="spinner-border text-secondary"></div>
+</div>
+<div *ngIf="cargando" class="chart-conteiner animated fadeIn fast">
   <ngx-charts-advanced-pie-chart
+
     [scheme]="colorScheme"
     [results]="covidData"
     [gradient]="gradient"
-    (activate)="onActivate($event)" style="color: grey;">
+    style="color: grey;">
   </ngx-charts-advanced-pie-chart>
 
 </div>

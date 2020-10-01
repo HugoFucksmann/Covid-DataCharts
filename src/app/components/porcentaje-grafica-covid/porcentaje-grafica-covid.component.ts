@@ -12,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 export class PorcentajeGraficaCovidComponent implements OnInit {
   single: any[];
   covidData: DataGraficaCovid[] = [];
-
+  cargando:boolean;
   // options
   gradient: boolean = true;
   showLegend: boolean = true;
@@ -32,8 +32,6 @@ export class PorcentajeGraficaCovidComponent implements OnInit {
 
 
       arrayF.sort((a, b) => b.TotalConfirmed - a.TotalConfirmed);
-      //arrayF.splice(20);
-
 
       let data = arrayF.map((item) => {
         return {
@@ -41,12 +39,8 @@ export class PorcentajeGraficaCovidComponent implements OnInit {
           value: item['TotalConfirmed'],
         };
       });
-
       this.covidData = data;
+      this.cargando=true;
     });
   }
-
-  onActivate(data): void {
-  }
-
 }

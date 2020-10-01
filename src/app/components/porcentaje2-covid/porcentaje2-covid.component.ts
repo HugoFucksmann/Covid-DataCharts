@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class Porcentaje2CovidComponent implements OnInit {
 
   covidData: DataGraficaCovid[] = [];
+  cargando: boolean;
 
   // options
   gradient: boolean = true;
@@ -35,8 +36,8 @@ export class Porcentaje2CovidComponent implements OnInit {
           value: item['TotalDeaths'],
         };
       });
-
       this.covidData = data;
+      this.cargando = true;
     });
   }
 

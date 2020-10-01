@@ -11,7 +11,7 @@ import { Covid, DataGraficaCovid } from './../../interfaces/interfacesCovid';
 })
 export class GraficaBarraCovidComponent implements OnInit {
 
-
+  cargando: boolean;
   covidData: DataGraficaCovid[] = [];
   // options
   showXAxis = true;
@@ -25,15 +25,24 @@ export class GraficaBarraCovidComponent implements OnInit {
 
   colorScheme = 'nightLights';
 
-  constructor(private covidService: CovidService) {}
+  constructor(private covidService: CovidService) {
+    if (screen.width < 600) this.showLegend = false;
+  }
 
   ngOnInit(): void {
-    this.covidService.getCovidArg().subscribe((resp) => {
 
-      let data = resp.map((item) => {
-        return { name: item.Date.slice(2, -10), value: item['Cases'] };
+    this.covidService.getAbautCovidArg().subscribe((resp: any) => {
+      const array = resp;
+      array.sort((a, b) => a.confirmed - b.confirmed);
+
+      const data = array.map((item) => {
+        return {
+          name: item['date'],
+          value: item['confirmed'], //new_confirmed
+        };
       });
       this.covidData = data;
+      this.cargando = true;
     });
   }
 

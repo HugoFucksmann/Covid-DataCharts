@@ -1,5 +1,8 @@
+<div class="d-flex justify-content-center">
+  <div *ngIf="!cargando" class="spinner-border text-secondary"></div>
+</div>
 
-<div class="chart-conteiner">
+<div *ngIf="cargando" class="chart-conteiner animated fadeIn fast">
   <ngx-charts-bar-vertical
 
     [scheme]="colorScheme"

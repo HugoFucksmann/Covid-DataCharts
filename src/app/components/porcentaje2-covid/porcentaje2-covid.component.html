@@ -1,4 +1,7 @@
-<div class="chart-conteiner">
+<div class="d-flex justify-content-center">
+  <div *ngIf="!cargando" class="spinner-border text-secondary"></div>
+</div>
+<div *ngIf="cargando" class="chart-conteiner animated fadeIn fast">
   <ngx-charts-pie-chart
 
     [scheme]="colorScheme"

@@ -12,41 +12,18 @@ export class Covid {
   Status: string;
 }
 
-/* export class CovidTotal {
+export interface Total {
   Message: string;
-  Global: number[];
-  Countries: any[];
-  Date: string;
+  Global: Global;
+  Countries: Country[];
+  Date: Date;
 }
- */
+
 export class DataGraficaCovid{
   name: string;
   value: number;
 }
 
-/*
-{Global
-    NewConfirmed?: Number;
-    TotalConfirmed?: Number;
-    NewDeaths?: Number;
-    TotalDeaths?: Number;
-    NewRecovered?: Number;
-    TotalRecovered?: Number;
-  }
-  {Countries
-    Country?: string;
-    CountryCode?: string;
-    Slug?: string;
-    NewConfirmed?: number;
-    TotalConfirmed?: number;
-    NewDeaths?: number;
-    TotalDeaths?: number;
-    NewRecovered?: number;
-    TotalRecovered?: number;
-    Date?: string;
-    Premium?: {};
-  }
-*/
 
 
 export interface Global {
@@ -72,13 +49,6 @@ export interface Country {
   TotalRecovered: number;
   Date: Date;
   Premium: Premium;
-}
-
-export class Total {
-  Message: string;
-  Global: Global;
-  Countries: Country[];
-  Date: Date;
 }
 
 
