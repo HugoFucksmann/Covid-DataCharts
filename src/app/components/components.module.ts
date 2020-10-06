@@ -10,6 +10,7 @@ import { GraficaBarraCovidComponent } from './grafica-barra-covid/grafica-barra-
 import { PorcentajeGraficaCovidComponent } from './porcentaje-grafica-covid/porcentaje-grafica-covid.component';
 import { Porcentaje2CovidComponent } from './porcentaje2-covid/porcentaje2-covid.component';
 import { CardChartComponent } from './card-chart/card-chart.component';
+import { ChartjsComponent } from './chartjs/chartjs.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CardChartComponent } from './card-chart/card-chart.component';
     PorcentajeGraficaCovidComponent,
     Porcentaje2CovidComponent,
     CardChartComponent,
+    ChartjsComponent,
   ],
   exports: [
     NavbarComponent,
@@ -27,6 +29,7 @@ import { CardChartComponent } from './card-chart/card-chart.component';
     PorcentajeGraficaCovidComponent,
     Porcentaje2CovidComponent,
     CardChartComponent,
+    ChartjsComponent,
   ],
   imports: [
     CommonModule,

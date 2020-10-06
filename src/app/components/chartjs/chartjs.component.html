@@ -2,12 +2,9 @@
   <div *ngIf="!cargando" class="spinner-border text-secondary"></div>
 </div>
 <div *ngIf="cargando" class="chart-conteiner animated fadeIn fast">
-  <ngx-charts-advanced-pie-chart
-    [scheme]="colorScheme"
-    [results]="covidData"
-    [gradient]="gradient"
-
-    style="color: grey;">
-  </ngx-charts-advanced-pie-chart>
-
+  <h4 style="color: grey;" class="text-center">Los 10 con mas Confirmados</h4>
+  <div >
+    <canvas id="myChart" width="300" height="150" ></canvas>
+  </div>
 </div>
+

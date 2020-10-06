@@ -1,5 +1,6 @@
+import { CovidAPIService } from './../../services/covid-api.service';
 import { DataGraficaCovid } from './../../interfaces/interfacesCovid';
-import { CovidService } from './../../services/covid.service';
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -21,35 +22,20 @@ export class Porcentaje2CovidComponent implements OnInit {
 
   colorScheme = 'nightLights';
 
-  constructor(private covidService: CovidService) {}
+  constructor(private covidService: CovidAPIService) {}
   ngOnInit(): void {
-    this.covidService.getCovidTotal().subscribe((resp) => {
-      const arrayR = Object.values(resp);
-      const arrayF = Object.values(arrayR[2]);
-
-      arrayF.sort((a, b) => b.TotalDeaths - a.TotalDeaths);
-      //arrayF.splice(20);
-
-      let data = arrayF.map((item) => {
+    this.covidService.getCovidTotal().subscribe( async (resp) => {
+      const data = await resp['Countries'].map((item) => {
         return {
-          name: item['Country'],
-          value: item['TotalDeaths'],
+          name: item.Country,
+          value: item.TotalConfirmed,
         };
       });
+      data.sort((a, b) => b.value - a.value);
       this.covidData = data;
       this.cargando = true;
     });
   }
 
-  onSelect(data): void {
-    console.log('Item clicked', JSON.parse(JSON.stringify(data)));
-  }
 
-  onActivate(data): void {
-    console.log('Activate', JSON.parse(JSON.stringify(data)));
-  }
-
-  onDeactivate(data): void {
-    console.log('Deactivate', JSON.parse(JSON.stringify(data)));
-  }
 }

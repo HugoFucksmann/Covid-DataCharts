@@ -1,6 +1,7 @@
+import { CovidAPIService } from './../../services/covid-api.service';
 
 import { DataGraficaCovid, Total } from './../../interfaces/interfacesCovid';
-import { CovidService } from './../../services/covid.service';
+
 import { single } from './../porcentaje-grafica-covid/data';
 import { Component, OnInit } from '@angular/core';
 
@@ -13,6 +14,7 @@ export class PorcentajeGraficaCovidComponent implements OnInit {
   single: any[];
   covidData: DataGraficaCovid[] = [];
   cargando:boolean;
+
   // options
   gradient: boolean = true;
   showLegend: boolean = true;
@@ -21,26 +23,23 @@ export class PorcentajeGraficaCovidComponent implements OnInit {
 
   colorScheme = 'nightLights';
 
-  constructor(private covidService: CovidService) {
-    Object.assign(this, { single });
+  constructor(private covidService: CovidAPIService) {
+
   }
 
   ngOnInit(): void {
-     this.covidService.getCovidTotal().subscribe((resp) => {
-      const arrayR = Object.values(resp);
-      const arrayF = Object.values(arrayR[2]);
-
-
-      arrayF.sort((a, b) => b.TotalConfirmed - a.TotalConfirmed);
-
-      let data = arrayF.map((item) => {
+     this.covidService.getCovidTotal().subscribe( async (resp) => {
+      const data = await resp['Countries'].map( item => {
         return {
-          name: item['Country'],
-          value: item['TotalConfirmed'],
-        };
-      });
+          name: item.Country,
+          value: item.TotalConfirmed,
+        }
+      })
+      data.sort((a, b) => b.value - a.value);
       this.covidData = data;
-      this.cargando=true;
+      this.cargando = true;
+
+
     });
   }
 }
